@@ -71,7 +71,7 @@ The first screen you will see is the authentication screen. Select **htpasswd** 
 
 image::images/htpasswd.jpg[]
 
-image::images/login.jpg[]
+image::images/login.png[]
 CodeReady Workspaces and your deployment environment, both, run on this OpenShift cluster.
 
 
