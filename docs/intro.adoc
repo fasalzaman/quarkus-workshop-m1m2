@@ -8,9 +8,9 @@ We are using a pre-created Azure Red Hat OpenShift cluster in this lab.
 
 Navigate to https://portal.azure.com. Login using the Azure Username and Password provided in the lab enviornment details page. Select `Resource groups` to see all the Resource groups in the subscription
 
-Open `Jboss-labs` resource group to see the pre-created OpenShift Cluster. You can see a Virtual Network and an Openshift cluster in this Resource group.
+Open `Quarkus` resource group to see the pre-created OpenShift Cluster. You can see a Virtual Network and an Openshift cluster in this Resource group.
 
-image::images/aro.jpg[]
+image::images/rg.jpg[]
 
 Azure RedHat OpenShift has a couple of other related resources deployed in resourse. To see all the related resources open resource group with prefix `aro` (aro-XXXXXX)
 You can explore through all the resources available here. You can also see the Master and Worker nodes created.
