@@ -10,18 +10,18 @@ Navigate to https://portal.azure.com. Login using the Azure Username and Passwor
 
 Open `Jboss-labs` resource group to see the pre-created OpenShift Cluster. You can see a Virtual Network and an Openshift cluster in this Resource group.
 
-<kbd>![](images/AROLatestImages/aro.jpg)</kbd>
+image::images/aro.jpg[]
 
 Azure RedHat OpenShift has a couple of other related resources deployed in resourse. To see all the related resources open resource group with prefix `aro` (aro-XXXXXX)
 You can explore through all the resources available here. You can also see the Master and Worker nodes created.
 
-<kbd>![](images/AROLatestImages/aro-main.jpg)</kbd>
+image::images/aro-main.jpg[]
 
 We are also using an Azure PostgreSQL Database in this lab. Please open `PostgreSQL` resources group to access the PostgreSQL Database.
 
 Open the PostgreSQL Database to see the Host name/Server name.
 
-<kbd>![](images/AROLatestImages/postgerss.jpg)</kbd>
+image::images/postgerss.jpg[]
 
 Username and password of the Azure Postgre SQL Database are provided in the environment details page.
 
@@ -29,23 +29,23 @@ To access PostgreSQL database, you need to install `PGAdmin` in your local machi
 
 PGAdmin may ask to set a master password while opening for the first time. Provide any password.
 
-<kbd>![](images/AROLatestImages/master.jpg)</kbd>
+image::images/master.jpg[]
 
 For connecting to our Azure PostgreSQL Database, Right Click on `Server`, select `Create` and then select `Server`.
 
-<kbd>![](images/AROLatestImages/pgserver.jpg)</kbd>
+image::images/pgserver.jpg[]
 
 In the new window that appear, provide a name for the connection.
 
-<kbd>![](images/AROLatestImages/general.jpg)</kbd>
+image::images/general.jpg[]
 
 Then Select Connection tab and provide HostName , Username and Password.All these values will be available in the environment details page.
 
-<kbd>![](images/AROLatestImages/connection.jpg)</kbd>
+image::images/connection.jpg[]
 
 Once you successfully connected to the database, Expand `Databases` to see the database already created for you. The database name will be same as that of you OpenShift Username (for example : OCPUSER0XX). Now expand your database, Schemas and Tables. There won't be any tables availabe yet. We will create tables in Second and Third Exercise.
 
-<kbd>![](images/AROLatestImages/nodbs.jpg)</kbd>
+image::images/nodb.png[]
 
 ## Getting Started with OpenShift
 
@@ -68,8 +68,10 @@ perform various tasks via a browser.  To get a feel for how the web console
 works, open your browser and go to the **OpenShift Web Console url** provided in the environment details page.
 
 The first screen you will see is the authentication screen. Select **htpasswd** option and enter your **OpenShift username** and **password**.
-<kbd>![](images/AROLatestImages/htpasswd.jpg)</kbd>
-<kbd>![](images/AROLatestImages/login.jpg)</kbd>
+
+image::images/htpasswd.jpg[]
+
+image::images/login.jpg[]
 CodeReady Workspaces and your deployment environment, both, run on this OpenShift cluster.
 
 
