@@ -25,34 +25,34 @@ If you ever need to run commands that you don't see in a menu, you can press kbd
 
 ==== IMPORTANT: The CodeReady Workspace will be loaded with the Project by default from Git branch and you can skip to **"Check out proper Git branch"** step. If you didn't find the project loaded by default you can continue with below steps to import project.
 
-    Let's import our project. Click on **Git Clone..** (or type kbd:[F1], enter 'git' and click on the auto-completed _Git Clone.._ )
+Let's import our project. Click on **Git Clone..** (or type kbd:[F1], enter 'git' and click on the auto-completed _Git Clone.._ )
 
-    image::che-workspace-gitclone.png[cdw, 900]
+image::che-workspace-gitclone.png[cdw, 900]
 
-    Step through the prompts, using the following value for **Repository URL**. If you use *FireFox*, it may end up pasting extra spaces at the end, so just press backspace after pasting:
+Step through the prompts, using the following value for **Repository URL**. If you use *FireFox*, it may end up pasting extra spaces at the end, so just press backspace after pasting:
 
-    [source,none,role="copypaste"]
-    ----
-    https://github.com/RedHat-Middleware-Workshops/quarkus-workshop-m1m2-labs
-    ----
+[source,none,role="copypaste"]
+----
+https://github.com/RedHat-Middleware-Workshops/quarkus-workshop-m1m2-labs
+----
 
-    image::crw-clone-repo.png[crw,900]
+image::crw-clone-repo.png[crw,900]
 
-    Click on *Select Repository Location* then click on *Open in New Window*. It will reload your web browser immediately:
+Click on *Select Repository Location* then click on *Open in New Window*. It will reload your web browser immediately:
 
-    image::crw-add-workspace.png[crw, 900]
+image::crw-add-workspace.png[crw, 900]
 
-    The project is imported into your workspace and is visible in the project explorer (click on the top-most icon for project explorer):
+The project is imported into your workspace and is visible in the project explorer (click on the top-most icon for project explorer):
 
-    image::crw-clone-explorer.png[crw,900]
+image::crw-clone-explorer.png[crw,900]
 
-    [NOTE]
-    ====
-    The Terminal window in CodeReady Workspaces. You can open a terminal window for any of the containers running in your Developer workspace. For the rest of these labs, anytime you need to run a command in a
-    terminal, you can use the **>_ New Terminal** command on the right:
+[NOTE]
+====
+The Terminal window in CodeReady Workspaces. You can open a terminal window for any of the containers running in your Developer workspace. For the rest of these labs, anytime you need to run a command in a
+terminal, you can use the **>_ New Terminal** command on the right:
 
-    image::cmd-terminal.png[codeready-workspace-terminal, 700]
-    ====
+image::cmd-terminal.png[codeready-workspace-terminal, 700]
+====
 
 ==== IMPORTANT: Check out proper Git branch
 
