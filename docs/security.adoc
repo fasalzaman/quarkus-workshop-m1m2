@@ -10,7 +10,7 @@ Like other exercises, we'll need another extension to enable the use of MicroPro
 
 [source,sh,role="copypaste"]
 ----
-mvn -q quarkus:add-extension -Dextensions="jwt" -f $CHE_PROJECTS_ROOT/quarkus-workshop-m1m2-labs
+mvn -q quarkus:add-extension -Dextensions="jwt" -Duser.home=/home/jboss -f $CHE_PROJECTS_ROOT/quarkus-workshop-m1m2-labs
 ----
 
 You should see:
@@ -118,7 +118,7 @@ Let's re-build and re-deploy the application:
 
 [source,sh,role="copypaste"]
 ----
-mvn clean package -DskipTests -f $CHE_PROJECTS_ROOT/quarkus-workshop-m1m2-labs && \
+mvn clean package -DskipTests -Duser.home=/home/jboss -f $CHE_PROJECTS_ROOT/quarkus-workshop-m1m2-labs && \
 oc label dc/people app.kubernetes.io/part-of=people --overwrite && \
 oc annotate dc/people app.openshift.io/connects-to=postgres-database --overwrite
 ----
@@ -287,7 +287,7 @@ First, you'll need to enable the Keycloak extension by running this command in a
 
 [source,sh,role="copypaste"]
 ----
-mvn -q quarkus:add-extension -Dextensions="oidc, keycloak-authorization" -f $CHE_PROJECTS_ROOT/quarkus-workshop-m1m2-labs
+mvn -q quarkus:add-extension -Dextensions="oidc, keycloak-authorization" -Duser.home=/home/jboss -f $CHE_PROJECTS_ROOT/quarkus-workshop-m1m2-labs
 ----
 
 You should see:
@@ -304,7 +304,7 @@ Since we will use Keycloak authentication rather than JWT, we'll need to disable
 
 [source,sh,role="copypaste"]
 ----
-mvn -q quarkus:remove-extension -Dextensions="jwt" -f $CHE_PROJECTS_ROOT/quarkus-workshop-m1m2-labs
+mvn -q quarkus:remove-extension -Dextensions="jwt" -Duser.home=/home/jboss -f $CHE_PROJECTS_ROOT/quarkus-workshop-m1m2-labs
 ----
 
 You should see:
@@ -385,7 +385,7 @@ Let's re-build and re-deploy the application:
 
 [source,sh,role="copypaste"]
 ----
-mvn clean package -DskipTests -f $CHE_PROJECTS_ROOT/quarkus-workshop-m1m2-labs && \
+mvn clean package -DskipTests -Duser.home=/home/jboss -f $CHE_PROJECTS_ROOT/quarkus-workshop-m1m2-labs && \
 oc label dc/people app.kubernetes.io/part-of=people --overwrite && \
 oc annotate dc/people app.openshift.io/connects-to=postgres-database --overwrite
 ----
