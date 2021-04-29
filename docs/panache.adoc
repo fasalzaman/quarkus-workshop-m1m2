@@ -559,12 +559,12 @@ quarkus.datasource.password=sa
 
 Update the database connection string along with username and password with below details.
 
-[source,java,role="copypaste"]
+[source,shell,role="copypaste"]
 ----
 %prod.quarkus.datasource.url=jdbc:postgresql://coolstore1.postgres.database.azure.com:5432/person
 ----
 
-[source,java,role="copypaste"]
+[source,shell,role="copypaste"]
 ----
 quarkus.datasource.username=demouser@coolstore1
 quarkus.datasource.password=demo@pass123
@@ -579,7 +579,7 @@ oc label dc/postgres-database app.kubernetes.io/part-of=people --overwrite && \
 oc annotate dc/people app.openshift.io/connects-to=postgres-database --overwrite
 ----
 
-This will deploy the database to our new project. 
+By this you will connect the database to our new project. 
 
 == Rebuild and redeploy app
 
