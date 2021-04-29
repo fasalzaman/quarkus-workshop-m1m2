@@ -542,40 +542,44 @@ You should get up to 2 records returned (since we passed `length=2` in the query
 
 == Deploy to OpenShift
 
-Our production environment needs a "real" database so let's deploy a Postgres database to OpenShift. Back in the {{ CONSOLE_URL }}/topology/ns/{{ USER_ID }}-project[Topology View^], click **+Add** on the left, on the _Database_ box on the project overview:
+Our production environment needs a "real" database so let's update the Postgres database connection details (JDBC url, database credentials) which are specified in `application.properties`. So you'll update the below details now:
 
-image::db.png[db, 700]
+[source,none]
+----
+%prod.quarkus.datasource.url=jdbc:postgresql://postgres-database:5432/person
+%prod.quarkus.datasource.driver=org.postgresql.Driver
+%dev.quarkus.datasource.url=jdbc:h2:mem:person:default
+%dev.quarkus.datasource.driver=org.h2.Driver
+%test.quarkus.datasource.url=jdbc:h2:mem:person:default
+%test.quarkus.datasource.driver=org.h2.Driver
 
-Type in `postgres` in the search box, and click on the *PostgreSQL (ephemeral)*:
+quarkus.datasource.username=sa
+quarkus.datasource.password=sa
+----
 
-image::db-postgres.png[db, 700]
+Update the database connection string along with username and password with below details.
 
-Click on *Instantiate Template* and fill in the following fields, leaving the others as their default values:
+[source,java,role="copypaste"]
+----
+%prod.quarkus.datasource.url=jdbc:postgresql://coolstore1.postgres.database.azure.com:5432/person
+----
 
-* **Namespace** (the first one): Select `{{ USER_ID }}-project`
-* **Namespace** (the _second_ one): `openshift`
-* **Database Service Name**: `postgres-database`
-* **PostgreSQL Connection Username**: `sa`
-* **PostgreSQL Connection Password**: `sa`
-* **PostgreSQL Database Name**: `person`
-
-image::db-postgres-values.png[db, 700]
-
-Click *Create*.
+[source,java,role="copypaste"]
+----
+quarkus.datasource.username=demouser@coolstore1
+quarkus.datasource.password=demo@pass123
+----
 
 And label the items with proper icons:
 
 [source,sh,role="copypaste"]
 ----
-oc label dc/postgres-database  app.openshift.io/runtime=postgresql --overwrite && \
 oc label dc/people app.kubernetes.io/part-of=people --overwrite && \
 oc label dc/postgres-database app.kubernetes.io/part-of=people --overwrite && \
 oc annotate dc/people app.openshift.io/connects-to=postgres-database --overwrite
 ----
 
-This will deploy the database to our new project. Click on the {{ CONSOLE_URL }}/topology/ns/{{ USER_ID }}-project[Topology View^] to see it:
-
-image::database-deployment.png[inventory_db_deployments, 700]
+This will deploy the database to our new project. 
 
 == Rebuild and redeploy app
 
@@ -629,7 +633,7 @@ Back on the {{ CONSOLE_URL }}/topology/ns/{{ USER_ID }}-project[Topology View^],
 Remember in our `application.properties` we have pre-defined database connections for the `%prod` profile. When Quarkus runs in production, it will connect to the database you just deployed!
 ====
 
-image::database-redeployment.png[inventory_db_deployments, 700]
+image::peopledc.png[project,600]
 
 == Access deployed app
 
