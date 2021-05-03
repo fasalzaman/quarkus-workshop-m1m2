@@ -83,6 +83,8 @@ If you ever need to run commands that you don't see in a menu, you can press kbd
 
 ## Import Project
 
+==== IMPORTANT: The CodeReady Workspace will be loaded with the Project by default from Git branch and you can skip to **"Check out proper Git branch"** step. If you didn't find the project loaded by default you can continue with below steps to import project.
+
 Let's import our project. Click on **Git Clone..** (or type kbd:[F1], enter 'git' and click on the auto-completed _Git Clone.._ )
 
 image::che-workspace-gitclone.png[cdw, 900]
