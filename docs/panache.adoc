@@ -542,7 +542,7 @@ You should get up to 2 records returned (since we passed `length=2` in the query
 
 == Deploy to OpenShift
 
-Our production environment needs a "real" database so let's update the Postgres database connection details (JDBC url, database credentials) which are specified in `application.properties`. So you'll update the below details now:
+Our production environment needs a "real" database so let’s add existing Azure Postgres database details like connection string, username and password details (JDBC url, database credentials) to application.properties file. So you’ll update below details now:
 
 [source,none]
 ----
