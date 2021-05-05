@@ -574,9 +574,7 @@ And label the items with proper icons:
 
 [source,sh,role="copypaste"]
 ----
-oc label dc/people app.kubernetes.io/part-of=people --overwrite && \
-oc label dc/postgres-database app.kubernetes.io/part-of=people --overwrite && \
-oc annotate dc/people app.openshift.io/connects-to=postgres-database --overwrite
+oc label dc/people app.kubernetes.io/part-of=people --overwrite
 ----
 
 By this you will connect the database to our new project. 
@@ -621,9 +619,7 @@ And let's do again to label the items with proper icons:
 
 [source,sh,role="copypaste"]
 ----
-oc label dc/people app.kubernetes.io/part-of=people --overwrite && \
-oc label dc/postgres-database app.kubernetes.io/part-of=people --overwrite && \
-oc annotate dc/people app.openshift.io/connects-to=postgres-database --overwrite
+oc label dc/people app.kubernetes.io/part-of=people --overwrite
 ----
 
 Back on the {{ CONSOLE_URL }}/topology/ns/{{ USER_ID }}-project[Topology View^], make sure it's done deploying (dark blue circle):
