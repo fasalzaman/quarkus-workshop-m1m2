@@ -4,24 +4,27 @@
 Azure Red Hat OpenShift provides a flexible, self-service deployment of fully managed OpenShift clusters. Maintain regulatory compliance and focus on your application development, while your master, infrastructure and application nodes are patched, updated and monitored by both Microsoft and Red Hat. Choose your own registry, networking, storage or CI/CD solutions.
 We are using a pre-created Azure Red Hat OpenShift cluster in this lab.
 
+:experimental:
+:imagesdir: images
+
 ### Login to Azure
 
 Navigate to https://portal.azure.com. Login using the Azure Username and Password provided in the lab enviornment details page. Select `Resource groups` to see all the Resource groups in the subscription
 
 Open `Quarkus` resource group to see the pre-created OpenShift Cluster. You can see a Virtual Network and an Openshift cluster in this Resource group.
 
-image::images/rg.png[]
+image::rg.png[]
 
 Azure RedHat OpenShift has a couple of other related resources deployed in resourse. To see all the related resources open resource group with prefix `aro` (aro-XXXXXX)
 You can explore through all the resources available here. You can also see the Master and Worker nodes created.
 
-image::images/aro-main.jpg[]
+image::aro-main.jpg[]
 
 We are also using an Azure PostgreSQL Database in this lab. Please open `PostgreSQL` resources group to access the PostgreSQL Database.
 
 Open the PostgreSQL Database to see the Host name/Server name.
 
-image::images/postgerss.jpg[]
+image::postgerss.jpg[]
 
 Username and password of the Azure Postgre SQL Database are provided in the environment details page.
 
@@ -29,23 +32,23 @@ To access PostgreSQL database, you need to install `PGAdmin` in your local machi
 
 PGAdmin may ask to set a master password while opening for the first time. Provide any password.
 
-image::images/master.jpg[]
+image::master.jpg[]
 
 For connecting to our Azure PostgreSQL Database, Right Click on `Server`, select `Create` and then select `Server`.
 
-image::images/pgserver.jpg[]
+image::pgserver.jpg[]
 
 In the new window that appear, provide a name for the connection.
 
-image::images/general.jpg[]
+image::general.jpg[]
 
 Then Select Connection tab and provide HostName , Username and Password.All these values will be available in the environment details page.
 
-image::images/connection.jpg[]
+image::connection.jpg[]
 
 Once you successfully connected to the database, Expand `Databases` to see the database already created for you. The database name will be same as that of you OpenShift Username (for example : OCPUSER0XX). Now expand your database, Schemas and Tables. There won't be any tables availabe yet. We will create tables in Second and Third Exercise.
 
-image::images/nodb.png[]
+image::nodb.png[]
 
 ## Getting Started with OpenShift
 
@@ -69,15 +72,14 @@ works, open your browser and go to the **OpenShift Web Console url** provided in
 
 The first screen you will see is the authentication screen. Select **htpasswd** option and enter your **OpenShift username** and **password**.
 
-image::images/htpasswd.jpg[]
+image::htpasswd.jpg[]
 
-image::images/login.png[]
+image::login.png[]
 CodeReady Workspaces and your deployment environment, both, run on this OpenShift cluster.
 
 
 = What is Quarkus?
-:experimental:
-:imagesdir: images
+
 
 image::logo.png[quarkus-logo, 900]
 
