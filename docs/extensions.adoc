@@ -307,7 +307,7 @@ Retrieve the list of possible extensions using the Maven plugin. Run this in the
 
 [source,sh,role="copypaste"]
 ----
-mvn -q quarkus:list-extensions -f $CHE_PROJECTS_ROOT/quarkus-workshop-m1m2-labs
+mvn -q quarkus:list-extensions -Duser.home=/home/jboss -f $CHE_PROJECTS_ROOT/quarkus-workshop-m1m2-labs
 ----
 
 You can see the list of ~286 different extensions available to you in the output:
@@ -347,7 +347,7 @@ Later on in this lab we'll be using MicroProfile metrics, so let's add that exte
 
 [source,sh,role="copypaste"]
 ----
-mvn -q quarkus:add-extension -Dextensions="smallrye-metrics" -f $CHE_PROJECTS_ROOT/quarkus-workshop-m1m2-labs
+mvn -q quarkus:add-extension -Dextensions="smallrye-metrics" -Duser.home=/home/jboss -f $CHE_PROJECTS_ROOT/quarkus-workshop-m1m2-labs
 ----
 
 You should see
