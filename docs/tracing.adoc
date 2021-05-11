@@ -29,7 +29,7 @@ Each component (microservice) in a distributed trace will contribute its own spa
 
 Jaeger is installed and managed through its Kubernetes Operator (just like AMQ Streams and Kafka that you used in previous exercises).
 
-First, on the {{ CONSOLE_URL }}/topology/ns/{{ USER_ID }}-project[Topology View^], click **+Add** and, then _From Catalog_:
+First, on the {{ CONSOLE_URL }}/topology/ns/{{ USER_ID }}-codeready[Topology View^], click **+Add** and, then _From Catalog_:
 
 image::fromcat.png[names,800]
 
@@ -111,7 +111,7 @@ oc rollout status -w dc/people
 
 == Trigger traces
 
-You'll need to trigger some HTTP endpoints to generate traces. Access the http://people-{{USER_ID}}-project.{{ROUTE_SUBDOMAIN}}/datatable.html[graphical person browser powered by the DataTables library we created earlier^].
+You'll need to trigger some HTTP endpoints to generate traces. Access the http://people-{{USER_ID}}-codeready.{{ROUTE_SUBDOMAIN}}/datatable.html[graphical person browser powered by the DataTables library we created earlier^].
 
 Exercise the table a bit by paging through the entries and using various search terms to force several RESTful calls back to our app:
 
@@ -119,7 +119,7 @@ image::paging.png[paging,600]
 
 == Inspect traces
 
-Open the https://jaeger-{{USER_ID}}-project.{{ROUTE_SUBDOMAIN}}[Jaeger Query UI^]. By default Jaeger uses the same login details as OpenShift, so click the **Login with OpenShift** button, enter your credentials:
+Open the https://jaeger-{{USER_ID}}-codeready.{{ROUTE_SUBDOMAIN}}[Jaeger Query UI^]. By default Jaeger uses the same login details as OpenShift, so click the **Login with OpenShift** button, enter your credentials:
 
 * **Username**: `{{ USER_ID }}`
 * **Password**: `{{ OPENSHIFT_USER_PASSWORD }}`
@@ -353,7 +353,7 @@ You should see:
 
 == Inspect traces
 
-Reload the https://jaeger-{{USER_ID}}-project.{{ROUTE_SUBDOMAIN}}[Jaeger Query UI^], and click **Find Traces**. The new trace should appear the top with multiple spans. Click on it to display details:
+Reload the https://jaeger-{{USER_ID}}-codeready.{{ROUTE_SUBDOMAIN}}[Jaeger Query UI^], and click **Find Traces**. The new trace should appear the top with multiple spans. Click on it to display details:
 
 image::swpeople.png[swpeople,800]
 
