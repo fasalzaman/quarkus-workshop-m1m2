@@ -42,7 +42,7 @@ image::names.png[names,800]
 
 The Strimzi operator installs and manages Kafka clusters on Kubernetes. It's been pre-installed for you, so all you have to do is create a Kafka cluster inside your namespace.
 
-First, on the {{ CONSOLE_URL }}/topology/ns/{{ USER_ID }}-project[Topology View^], click **+Add** and, then _From Catalog_:
+First, on the {{ CONSOLE_URL }}/topology/ns/{{ USER_ID }}-codeready[Topology View^], click **+Add** and, then _From Catalog_:
 
 image::fromcat.png[names,800]
 
@@ -75,9 +75,9 @@ image::topiccreate.png[topiccreate,800]
 
 This will cause the Operator to provision a new Topic in the Kafka cluster.
 
-Back on the {{ CONSOLE_URL }}/topology/ns/{{ USER_ID }}-project[Topology View^], make sure all the Kafka and Zookeeper pods are up and running (with dark blue circles):
+Back on the {{ CONSOLE_URL }}/topology/ns/{{ USER_ID }}-codeready[Topology View^], make sure all the Kafka and Zookeeper pods are up and running (with dark blue circles):
 
-image::kafkaup.png[topiccreate,800]
+image::M2-kafka.PNG[topiccreate,800]
 
 It may take a few minutes for all of the pods to appear spin up. You can continue to the next step while the Kafka cluster and topics are created.
 
@@ -275,7 +275,7 @@ Run the following command which will build and deploy using the OpenShift extens
 
 [source,sh,role="copypaste"]
 ----
-mvn clean package -Duser.home=/home/jboss -DskipTests -f $CHE_PROJECTS_ROOT/quarkus-workshop-m1m2-labs && \
+mvn clean package -DskipTests -Duser.home=/home/jboss -f $CHE_PROJECTS_ROOT/quarkus-workshop-m1m2-labs && \
 oc label dc/people app.kubernetes.io/part-of=people --overwrite
 ----
 
@@ -283,7 +283,7 @@ The build should take a minute or two to complete.
 
 == Test
 
-Our application should be up and running in a few seconds after the build completes and generating names. To see if it's working, access the http://people-{{USER_ID}}-project.{{ROUTE_SUBDOMAIN}}/names.html[graphical name cloud powered by Quarkus, MicroProfile and Kafka^]. You should see a cloud of names updating every 5 seconds (it may take a few seconds for it to start!):
+Our application should be up and running in a few seconds after the build completes and generating names. To see if it's working, access the http://people-{{USER_ID}}-codeready.{{ROUTE_SUBDOMAIN}}/names.html[graphical name cloud powered by Quarkus, MicroProfile and Kafka^]. You should see a cloud of names updating every 5 seconds (it may take a few seconds for it to start!):
 
 [NOTE]
 ====
