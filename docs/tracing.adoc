@@ -49,7 +49,7 @@ image::jaegerspin.png[spin, 600]
 
 Jaeger exposes its collector at different ports for different protocols. Most use the HTTP collector at `jaeger-collector:14268` but other protocols like gRPC are also supported on different ports. You can see them by clicking on the Jaeger circle and clicking the _Resources_ tab:
 
-image::jaegersvcs.png[spin, 700]
+image::M2-Jaeger.PNG[spin, 700]
 
 The endpoint on port `14268` is the one we'll use for our app.
 
