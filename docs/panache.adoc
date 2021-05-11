@@ -622,7 +622,7 @@ And let's do again to label the items with proper icons:
 oc label dc/people app.kubernetes.io/part-of=people --overwrite
 ----
 
-Back on the {{ CONSOLE_URL }}/topology/ns/{{ USER_ID }}-project[Topology View^], make sure it's done deploying (dark blue circle):
+Back on the {{ CONSOLE_URL }}/topology/ns/{{ USER_ID }}-codeready[Topology View^], make sure it's done deploying (dark blue circle):
 
 [NOTE]
 ====
@@ -642,7 +642,7 @@ We can access using `curl` once again to find everyone born in or before the yea
 curl -s $(oc get route people -o=go-template --template={% raw %}'{{ .spec.host }}'{% endraw %})/person/birth/before/2000 | jq
 ----
 
-Now access the http://people-{{USER_ID}}-project.{{ROUTE_SUBDOMAIN}}/datatable.html[graphical person browser powered by the DataTables library^]. It should look like:
+Now access the http://people-{{USER_ID}}-codeready.{{ROUTE_SUBDOMAIN}}/datatable.html[graphical person browser powered by the DataTables library^]. It should look like:
 
 image::datatable.png[datatable,800]
 

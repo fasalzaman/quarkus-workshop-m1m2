@@ -57,7 +57,7 @@ Leave the rest as-is and click *Create*:
 
 image::search-prometheus-image.png[Prometheus, 800]
 
-On the {{ CONSOLE_URL }}/topology/ns/{{ USER_ID }}-project[Topology View for your project^], you'll see prometheus spinning up.
+On the {{ CONSOLE_URL }}/topology/ns/{{ USER_ID }}-codeready[Topology View for your project^], you'll see prometheus spinning up.
 
 Finally, mount the ConfigMap into the running container:
 
@@ -79,7 +79,7 @@ You should see `deployment "prometheus" successfully rolled out`.
 
 Once it completes, click on the arrow to access the prometheus query UI:
 
-image::prometheus-route.png[Prometheus, 700]
+image::M2-promath.PNG[Prometheus, 700]
 
 Which should load the Prometheus Web UI (we'll use this later):
 
@@ -91,7 +91,7 @@ Like other exercises, we'll need another extension to enable metrics. Install it
 
 [source,sh,role="copypaste"]
 ----
-mvn -q quarkus:add-extension -Duser.home=/home/jboss -Dextensions="smallrye-metrics" -f $CHE_PROJECTS_ROOT/quarkus-workshop-m1m2-labs
+mvn -q quarkus:add-extension -Dextensions="smallrye-metrics" -Duser.home=/home/jboss -f $CHE_PROJECTS_ROOT/quarkus-workshop-m1m2-labs
 ----
 
 [INFO]
@@ -227,7 +227,7 @@ oc annotate dc/people app.openshift.io/connects-to=postgres-database --overwrite
 
 == Confirm deployment
 
-Once the build completes, ensure the app completes its redeployment with this command (or watch the {{ CONSOLE_URL }}/topology/ns/{{ USER_ID }}-project[Topology View for your project^])
+Once the build completes, ensure the app completes its redeployment with this command (or watch the {{ CONSOLE_URL }}/topology/ns/{{ USER_ID }}-codeready[Topology View for your project^])
 
 [source,sh,role="copypaste"]
 ----
@@ -236,11 +236,11 @@ oc rollout status -w dc/people
 
 == Test
 
-You'll need to trigger the methods that we've instrumented, so http://people-{{USER_ID}}-project.{{ROUTE_SUBDOMAIN}}/names.html[reopen the name cloud^], which will start producing names (and generating metrics):
+You'll need to trigger the methods that we've instrumented, so http://people-{{USER_ID}}-codeready.{{ROUTE_SUBDOMAIN}}/names.html[reopen the name cloud^], which will start producing names (and generating metrics):
 
 image::names.png[names, 400]
 
-Within about 15-30 seconds, Prometheus should start scraping the metrics. Once again, access the http://prometheus-{{USER_ID}}-project.{{ROUTE_SUBDOMAIN}}[Prometheus UI^]. Start typing in the query box to look for 'acme':
+Within about 15-30 seconds, Prometheus should start scraping the metrics. Once again, access the http://prometheus-{{USER_ID}}-codeready.{{ROUTE_SUBDOMAIN}}[Prometheus UI^]. Start typing in the query box to look for 'acme':
 
 [NOTE]
 ====
@@ -275,7 +275,7 @@ Let's create a Grafana Dashboard for our Quarkus App!
 
 == Install Grafana
 
-Follow the same process as before: On the {{ CONSOLE_URL }}/topology/ns/{{ USER_ID }}-project[Topology View^], click on `+Add`, and choose "Container Image", and fill in the fields:
+Follow the same process as before: On the {{ CONSOLE_URL }}/topology/ns/{{ USER_ID }}-codeready[Topology View^], click on `+Add`, and choose "Container Image", and fill in the fields:
 
 * *Image Name*: `registry.redhat.io/openshift4/ose-grafana` (Press Enter key then make sure to see *Validated*)
 * *Application*: `Create Application`
@@ -286,9 +286,9 @@ Leave the rest as-is and click *Create*:
 
 image::search-grafana-image.png[Grafana, 700]
 
-On the {{ CONSOLE_URL }}/topology/ns/{{ USER_ID }}-project[Topology View for your project^], you'll see Grafana spinning up. Once it completes, click on the arrow to access the Grafana UI:
+On the {{ CONSOLE_URL }}/topology/ns/{{ USER_ID }}-codeready[Topology View for your project^], you'll see Grafana spinning up. Once it completes, click on the arrow to access the Grafana UI:
 
-image::grafana-route.png[Prometheus, 700]
+image::M2-Grafana.PNG[Prometheus, 700]
 
 Which should load the Grafana Web UI:
 
@@ -313,7 +313,7 @@ image::grafana-datasource-types.png[Grafana, 700]
 
 Fill out the form with the following values:
 
-* *URL*: `http://prometheus.{{USER_ID}}-project:9090`
+* *URL*: `http://prometheus.{{USER_ID}}-codeready:9090`
 
 Click on *Save & Test* and confirm you get a success message:
 
@@ -325,7 +325,7 @@ With our prometheus data source working, let's make a dashboard.
 
 == Create Dashboard
 
-Back on the http://grafana-{{USER_ID}}-project.{{ROUTE_SUBDOMAIN}}[Grafana Home^], select *New Dashboard* to create a new _Dashboard_ to review the metrics.
+Back on the http://grafana-{{USER_ID}}-codeready.{{ROUTE_SUBDOMAIN}}[Grafana Home^], select *New Dashboard* to create a new _Dashboard_ to review the metrics.
 
 image::grafana-create-dashboard.png[metrics_grafana, 900]
 

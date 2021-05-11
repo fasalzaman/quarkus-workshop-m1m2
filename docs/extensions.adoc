@@ -157,6 +157,12 @@ It’s a very simple REST endpoint, returning "hello" to requests on `/hello`.
 Compared to vanilla JAX-RS, with Quarkus there is no need to create an `Application` class. It’s supported but not required. In addition, only one instance of the resource is created and not one per request. You can configure this using the different `*Scoped` annotations (`ApplicationScoped`, `RequestScoped`, etc).
 ====
 
+### Switching Java language server to Standard mode
+
+On the right side bottom end you will find a Rocket icon which shows that Java language server running in light-weight mode, Click on the rocket icon and select `Yes`  in the popup window to switch to Standard Mode.
+
+image::Java-mode.png[]
+
 ## Running the Application in Live Coding Mode
 
 **Live Coding** (also referred to as _dev mode_) allows us to run the app and make changes on the fly. Quarkus will automatically re-compile and reload the app when changes are made. This is a powerful and efficient style of developing that you will use throughout the lab.
@@ -307,7 +313,7 @@ Retrieve the list of possible extensions using the Maven plugin. Run this in the
 
 [source,sh,role="copypaste"]
 ----
-mvn -q quarkus:list-extensions -f $CHE_PROJECTS_ROOT/quarkus-workshop-m1m2-labs
+mvn -q quarkus:list-extensions -Duser.home=/home/jboss -f $CHE_PROJECTS_ROOT/quarkus-workshop-m1m2-labs
 ----
 
 You can see the list of ~286 different extensions available to you in the output:
@@ -347,7 +353,7 @@ Later on in this lab we'll be using MicroProfile metrics, so let's add that exte
 
 [source,sh,role="copypaste"]
 ----
-mvn -q quarkus:add-extension -Dextensions="smallrye-metrics" -f $CHE_PROJECTS_ROOT/quarkus-workshop-m1m2-labs
+mvn -q quarkus:add-extension -Dextensions="smallrye-metrics" -Duser.home=/home/jboss -f $CHE_PROJECTS_ROOT/quarkus-workshop-m1m2-labs
 ----
 
 You should see
