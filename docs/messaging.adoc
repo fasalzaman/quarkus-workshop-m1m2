@@ -48,12 +48,14 @@ We're using the _Axle_ variant here, which provides good support for async opera
 
 == Create RESTful resource
 
-We'll start by creating a new asynchronous endpoint. Open the `PersonResource` class and add a new field which will provide access to the Vert.x event bus which is used to pass messages between components:
+We'll start by creating a new asynchronous endpoint. Open the `PersonResource` class and add a new field after `// TODO: Add lifecycle hook` code block which will provide access to the Vert.x event bus which is used to pass messages between components:
 
 [source,java,role="copypaste"]
 ----
     @Inject EventBus bus;
 ----
+
+image::M2-Restful.png[]
 
 You'll also need to add more import statements at the top:
 
