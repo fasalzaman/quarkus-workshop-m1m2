@@ -46,9 +46,7 @@ Then Select Connection tab and provide HostName , Username and Password.All thes
 
 image::connection.jpg[]
 
-Once you successfully connected to the database, Expand `Databases` to see the database already created for you. The database name will be same as that of you OpenShift Username (for example : OCPUSER0XX). Now expand your database, Schemas and Tables. There won't be any tables availabe yet. We will create tables in Second and Third Exercise.
-
-image::nodb.png[]
+Once you successfully connected to the database, Expand `Databases` to see the available databases.
 
 ## Getting Started with OpenShift
 
